@@ -1,14 +1,11 @@
 package observer;
 
-public class BinaryObserver extends Observer{
+import java.util.Observable;
+import java.util.Observer;
 
-    public BinaryObserver(Subject subject){
-        this.subject = subject;
-        this.subject.attach(this);
-    }
-
-    @Override
-    public void update() {
-        System.out.println( "Binary String: " + Integer.toBinaryString(subject.getState()));
-    }
+public class BinaryObserver implements Observer {
+  @Override
+  public void update(Observable o, Object arg) {
+    System.out.println( "Binary String: " + Integer.toBinaryString((Integer) arg));
+  }
 }

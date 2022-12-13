@@ -4,9 +4,13 @@ public class ObserverPatternDemo {
     public static void main(String[] args) {
         Subject subject = new Subject();
 
-        new HexaObserver(subject);
-        new OctalObserver(subject);
-        new BinaryObserver(subject);
+        var hexaObserver = new HexaObserver();
+        var octalObserver = new OctalObserver();
+        var binaryObserver = new BinaryObserver();
+
+        subject.addObserver(hexaObserver);
+        subject.addObserver(octalObserver);
+        subject.addObserver(binaryObserver);
 
         System.out.println("First state change: 15");
         subject.setState(15);

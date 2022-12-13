@@ -1,14 +1,12 @@
 package observer;
 
-public class OctalObserver extends Observer{
+import java.util.Observable;
+import java.util.Observer;
 
-    public OctalObserver(Subject subject){
-        this.subject = subject;
-        this.subject.attach(this);
-    }
+public class OctalObserver implements Observer {
 
-    @Override
-    public void update() {
-        System.out.println( "Octal String: " + Integer.toOctalString(subject.getState()));
-    }
+  @Override
+  public void update(Observable o, Object arg) {
+    System.out.println("Octal String: " + Integer.toOctalString((Integer) arg));
+  }
 }

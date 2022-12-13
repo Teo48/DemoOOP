@@ -1,10 +1,8 @@
 package observer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Observable;
 
-public class Subject {
-    private List<Observer> observers = new ArrayList<Observer>();
+public class Subject extends Observable {
     private int state;
 
     public int getState() {
@@ -13,16 +11,8 @@ public class Subject {
 
     public void setState(int state) {
         this.state = state;
-        notifyAllObservers();
+        setChanged();
+        notifyObservers(state);
     }
 
-    public void attach(Observer observer){
-        observers.add(observer);
-    }
-
-    public void notifyAllObservers(){
-        for (Observer observer : observers) {
-            observer.update();
-        }
-    }
 }

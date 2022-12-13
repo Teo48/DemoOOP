@@ -1,15 +1,13 @@
 package observer;
 
-public class HexaObserver extends Observer{
+import java.util.Observable;
+import java.util.Observer;
 
-    public HexaObserver(Subject subject){
-        this.subject = subject;
-        this.subject.attach(this);
-    }
+public class HexaObserver implements Observer {
 
     @Override
-    public void update() {
-        System.out.println( "Hex String: " + Integer.toHexString(subject.getState()).toUpperCase());
+    public void update(Observable o, Object arg) {
+        System.out.println("Hexa String: " + Integer.toHexString((Integer) arg));
     }
 }
 
