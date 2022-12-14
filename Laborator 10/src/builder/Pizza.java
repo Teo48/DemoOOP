@@ -1,5 +1,6 @@
 package builder;
 
+@Builder
 public class Pizza {
 	private String pizzaSize;
 	private String crust;
