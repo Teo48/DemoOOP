@@ -1,6 +1,6 @@
 package singletonfactory;
 
-import factorymethod.*;
+import factory.*;
 
 public class SingletonFactory {
   private static SingletonFactory instance = null;

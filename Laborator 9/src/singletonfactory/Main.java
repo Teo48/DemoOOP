@@ -1,7 +1,7 @@
 package singletonfactory;
 
-import factorymethod.Notification;
-import factorymethod.NotificationType;
+import factory.Notification;
+import factory.NotificationType;
 
 public class Main {
   public static void main(String [] args) {
